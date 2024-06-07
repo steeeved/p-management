@@ -66,7 +66,7 @@ const ReusablePriorityPage = ({ priority }: ReusablePriorityPageProps) => {
           </button>
         }
       />
-      <div className="flex justify-start">
+      <div className="flex justify-start mb-4">
         <button
           className={`py-2 px-4 ${
             view === "list" ? "bg-gray-300" : "bg-white"
@@ -101,6 +101,26 @@ const ReusablePriorityPage = ({ priority }: ReusablePriorityPageProps) => {
               columns={columns}
               checkboxSelection
               getRowId={(row) => row.id}
+              className="!border-0 bg-white dark:bg-gray-800 dark:text-gray-200"
+              sx={{
+                "& .MuiDataGrid-columnHeader, & .MuiDataGrid-cell, & .MuiDataGrid-filler": {
+                  backgroundColor: "var(--header-bg)",
+                  color: "var(--row-text)",
+                },
+                "& .MuiDataGrid-footerContainer": {
+                  backgroundColor: "var(--header-bg)",
+                },
+                "& .MuiDataGrid-selectedRowCount, & .MuiTablePagination-selectLabel, & .MuiSelect-select, & .MuiTablePagination-displayedRows":
+                  {
+                    color: "var(--row-text)",
+                  },
+                "& .MuiTablePagination-selectIcon": {
+                  fill: "var(--row-text)",
+                },
+                "& .MuiDataGrid-menuIcon, & .MuiSvgIcon-root": {
+                  fill: "var(--row-text)",
+                },
+              }}
             />
           </div>
         )

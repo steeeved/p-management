@@ -59,9 +59,9 @@ const TeamsTable = () => {
           }}
           className="!border-0  bg-white dark:bg-gray-800 dark:text-gray-200"
           sx={{
-            "& .MuiDataGrid-columnHeaders": {
+            "& .MuiDataGrid-columnHeader, & .MuiDataGrid-cell, & .MuiDataGrid-filler": {
               backgroundColor: "var(--header-bg)",
-              color: "var(--header-text)",
+              color: "var(--row-text)",
             },
             "& .MuiDataGrid-footerContainer": {
               backgroundColor: "var(--header-bg)",

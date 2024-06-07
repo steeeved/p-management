@@ -155,9 +155,9 @@ const Sidebar = () => {
 
           <button
             onClick={() => setShowProjects(!showProjects)}
-            className="mt-5 text-gray-100 dark:text-gray-400 mx-4 uppercase flex items-center"
+            className="mt-5 text-gray-800 dark:text-white mx-4 uppercase flex items-center"
           >
-            <span>Projects</span>
+            <span className="">Projects</span>
             <span className="ml-2">{showProjects ? "▲" : "▼"}</span>
           </button>
           {showProjects &&
@@ -173,9 +173,9 @@ const Sidebar = () => {
 
           <button
             onClick={() => setShowPriority(!showPriority)}
-            className="mt-5 text-gray-100 dark:text-gray-400 mx-4 uppercase flex items-center"
+            className="mt-5 text-gray-800 dark:text-white mx-4 uppercase flex items-center"
           >
-            <span>Priority</span>
+            <span className="">Priority</span>
             <span className="ml-2">{showPriority ? "▲" : "▼"}</span>
           </button>
           {showPriority && (

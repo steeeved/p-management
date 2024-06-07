@@ -3,7 +3,7 @@ import { format } from "date-fns";
 import Image from "next/image";
 
 const TaskCard = ({ task }: { task: Task }) => (
-  <div className="p-4 bg-white dark:bg-gray-800 shadow rounded mb-3">
+  <div className="p-4 bg-white dark:bg-gray-800 dark:text-white shadow rounded mb-3">
     {task.attachments && task.attachments.length > 0 && (
       <div>
         <strong>Attachments:</strong>

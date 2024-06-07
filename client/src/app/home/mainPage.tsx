@@ -172,7 +172,7 @@ const MainPage = () => {
                   backgroundColor: "var(--header-bg)",
                   color: "var(--header-text)",
                 },
-                "& .MuiDataGrid-columnHeader, & .MuiDataGrid-cell": {
+                "& .MuiDataGrid-columnHeader": {
                   backgroundColor: "var(--header-bg)",
                   color: "var(--row-text)",
                   padding: "0",
@@ -182,7 +182,8 @@ const MainPage = () => {
                   fill: "var(--row-text)",
                 },
                 "& .MuiDataGrid-cell": {
-                  backgroundColor: "var(--row-bg)",
+                  // backgroundColor: "var(--row-bg)",
+                  color: "var(--row-text)",
                 },
                 "& .MuiDataGrid-row": {
                   backgroundColor: "var(--row-bg)",
