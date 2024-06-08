@@ -116,7 +116,7 @@ const ProjectHeader = ({ activeTab, setActiveTab }: ProjectHeaderProps) => {
             <input
               type="text"
               placeholder="Search Task"
-              className="pl-10 pr-4 py-1 border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              className="pl-10 pr-4 py-1 border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white z-10"
             />
             <Grid3x3 className="w-4 h-4 absolute top-2 left-3 text-gray-400" />
           </div>
