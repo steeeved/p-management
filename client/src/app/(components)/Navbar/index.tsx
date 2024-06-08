@@ -29,8 +29,8 @@ const Navbar = () => {
     <div
       className={
         isDarkMode
-          ? "dark:flex dark:justify-between dark:items-center dark:px-4 dark:py-3 dark:bg-gray-800 "
-          : "flex justify-between items-center px-4 py-3 bg-white"
+          ? "dark:flex dark:justify-between dark:items-center dark:px-4 dark:py-3 dark:bg-gray-800 shadow-md"
+          : "flex justify-between items-center px-4 py-3 bg-white shadow-md"
       }
     >
       {/* Search Bar */}
