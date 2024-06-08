@@ -30,7 +30,7 @@ const SearchPage = () => {
   }, [handleSearch.cancel]);
 
   return (
-    <div className="p-4">
+    <div className="p-8">
       <Header name="Search" />
       <div className="">
         <input
