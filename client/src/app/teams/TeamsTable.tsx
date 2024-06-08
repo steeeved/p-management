@@ -38,7 +38,7 @@ const TeamsTable = () => {
   const userRole = currentUser?.userRole;
 
   return (
-    <div className="flex flex-col w-full p-4">
+    <div className="flex flex-col w-full p-8">
       <Header
         name="Teams"
         buttonComponent={
