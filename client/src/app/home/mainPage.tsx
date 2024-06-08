@@ -107,7 +107,7 @@ const MainPage = () => {
     return <div>Error fetching data</div>;
 
   return (
-    <div className="container w-[100%] h-full p-4 bg-gray-100 dark:bg-gray-700">
+    <div className="container w-[100%] h-full p-8 bg-gray-100 dark:bg-gray-700">
       <header className="text-4xl font-bold mb-6 dark:text-white font-inherit">
         Project Management Dashboard
       </header>
