@@ -46,7 +46,7 @@ const TimelineChart = () => {
   };
 
   return (
-    <div className="gant-container p-5 max-w-full px-[20px]">
+    <div className="gant-container p-8 max-w-full">
       <header className="mb-4 flex justify-between items-center">
         <h1 className="font-bold text-lg dark:text-white">Project Timeline</h1>
         <div className="inline-block relative w-64">

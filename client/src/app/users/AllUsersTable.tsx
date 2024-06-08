@@ -51,7 +51,7 @@ const AllUsersTable = () => {
   if (isError || !users) return <div>Error fetching users</div>;
 
   return (
-    <div className="flex flex-col w-full p-4">
+    <div className="flex flex-col w-full p-8">
       <Header name="Users" />
       <div style={{ height: 650, width: "100%" }}>
         <DataGrid
