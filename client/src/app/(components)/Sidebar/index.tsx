@@ -10,6 +10,8 @@ import {
   Menu,
   X,
   LucideIcon,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -46,17 +48,19 @@ const SidebarLink = ({
   return (
     <Link href={href}>
       <div
-        className={`cursor-pointer flex items-center ${
-          isCollapsed ? "justify-center py-4" : "justify-start px-8 py-4"
-        }  hover:bg-blue-200 gap-3 transition-colors ${
-          isActive ? "bg-blue-200 text-white" : ""
+        className={`cursor-pointer relative flex items-center ${
+          isCollapsed ? "justify-center py-4" : "justify-start px-8 py-3"
+        }  hover:bg-gray-100 dark:hover:bg-gray-700 gap-3 transition-colors ${
+          isActive ? "bg-gray-100 dark:bg-gray-700 text-white" : ""
         }`}
         onClick={() => {
           if (screenWidth > 768) return;
-          console.log("clicked");
           dispatch(setIsSidebarCollapsed(!isSidebarCollapsed));
         }}
       >
+        {isActive && (
+          <div className="w-[5px] h-[100%] absolute top-0 left-0 bg-blue-200" />
+        )}
         <Icon className="w-6 h-6 dark:text-gray-100 text-gray-800" />
         <span
           className={`${
@@ -77,14 +81,14 @@ const Sidebar = () => {
   const isSidebarCollapsed = useAppSelector(
     (state) => state.global.isSidebarCollapsed
   );
-  const [showProjects, setShowProjects] = useState(false);
-  const [showPriority, setShowPriority] = useState(false);
+  const [showProjects, setShowProjects] = useState(true);
+  const [showPriority, setShowPriority] = useState(true);
 
   const { data: currentUser } = useGetAuthUserQuery({});
 
   const sidebarClassNames = `fixed flex flex-col h-[100%] justify-between ${
-    isSidebarCollapsed ? "w-0" : "w-64 md:w-64"
-  } bg-gray-900 text-gray-100 transition-all duration-300 h-full shadow-md z-40 overflow-auto 
+    isSidebarCollapsed ? "w-0 hidden" : "w-64 md:w-64"
+  } bg-gray-900 text-gray-100 transition-all duration-300 h-full z-40 overflow-auto 
    ${isDarkMode ? "dark:bg-gray-800" : "bg-white"}
    `;
 
@@ -100,12 +104,12 @@ const Sidebar = () => {
 
   return (
     <div className={sidebarClassNames}>
-      <div className="flex flex-col h-[100%] justify-start">
-        <div className="flex justify-between items-center px-8 py-4">
+      <div className="flex flex-col h-[100%] justify-start ">
+        <div className="flex justify-between items-center px-4 pt-3 w-64 h-[56px] fixed z-50 dark:bg-gray-800 bg-white">
           <div className="dark:text-white text-gray-800">LOGO</div>
           {isSidebarCollapsed ? null : (
             <button
-              className="px-3 py-3"
+              className="py-3"
               onClick={() => {
                 dispatch(setIsSidebarCollapsed(!isSidebarCollapsed));
               }}
@@ -114,7 +118,7 @@ const Sidebar = () => {
             </button>
           )}
         </div>
-        <nav>
+        <nav className="mt-[56px] z-10">
           <SidebarLink
             isCollapsed={isSidebarCollapsed}
             icon={Home}
@@ -154,11 +158,11 @@ const Sidebar = () => {
           />
 
           <button
-            onClick={() => setShowProjects(!showProjects)}
-            className="mt-5 text-gray-800 dark:text-white mx-4 uppercase flex items-center"
+            onClick={() => setShowProjects((prev) => !prev)}
+            className="w-[100%] px-8 py-3  text-gray-800 dark:text-white  uppercase flex items-center justify-between"
           >
             <span className="">Projects</span>
-            <span className="ml-2">{showProjects ? "▲" : "▼"}</span>
+            {showProjects ? <ChevronUp /> : <ChevronDown />}
           </button>
           {showProjects &&
             projects?.map((project) => (
@@ -173,10 +177,10 @@ const Sidebar = () => {
 
           <button
             onClick={() => setShowPriority(!showPriority)}
-            className="mt-5 text-gray-800 dark:text-white mx-4 uppercase flex items-center"
+            className="w-[100%] px-8 py-3 text-gray-800 dark:text-white uppercase flex items-center justify-between"
           >
             <span className="">Priority</span>
-            <span className="ml-2">{showPriority ? "▲" : "▼"}</span>
+            {showPriority ? <ChevronUp /> : <ChevronDown />}
           </button>
           {showPriority && (
             <>
