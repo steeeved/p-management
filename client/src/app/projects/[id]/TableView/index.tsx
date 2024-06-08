@@ -54,7 +54,7 @@ const TableView = ({ id, setIsModalNewTaskOpen }: TableViewProps) => {
   if (error) return <div>An error occurred while fetching tasks</div>;
 
   return (
-    <div style={{ height: 650, width: "100%" }} className="p-4">
+    <div style={{ height: 650, width: "100%" }} className="p-8">
       <Header
         name="Table"
         buttonComponent={
