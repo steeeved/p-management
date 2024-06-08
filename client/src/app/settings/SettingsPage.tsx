@@ -12,7 +12,7 @@ const SettingsPage = () => {
   };
 
   return (
-    <div className="p-6">
+    <div className="p-8">
       <Header name="Settings" />
       <div className="space-y-4">
         <div>
